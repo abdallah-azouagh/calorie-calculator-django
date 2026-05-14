@@ -1,0 +1,248 @@
+/* form.css — Calorie Calculator styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 720px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* ===== Header ===== */
+.header {
+    background: linear-gradient(135deg, #1F3A68 0%, #2a5298 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 15px;
+    opacity: 0.9;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.header .emoji {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ===== Form ===== */
+.form-section {
+    padding: 35px 40px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1F3A68;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input[type="number"],
+select {
+    padding: 12px 14px;
+    border: 2px solid #e0e6f0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+    transition: all 0.2s ease;
+    background: #f7f9fc;
+}
+
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+button[type="submit"] {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    background: linear-gradient(135deg, #1F3A68 0%, #2a5298 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(31, 58, 104, 0.3);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* ===== Result ===== */
+.result {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    margin: 0 40px 35px;
+    padding: 25px 30px;
+    border-radius: 12px;
+    border-left: 5px solid #4caf50;
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result h2 {
+    color: #1F3A68;
+    font-size: 22px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.result-card {
+    background: white;
+    padding: 18px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.result-card .value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1F3A68;
+    margin-bottom: 4px;
+}
+
+.result-card .label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.summary {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+}
+
+.summary strong {
+    color: #1F3A68;
+}
+
+.advies {
+    background: white;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #2e7d32;
+    font-style: italic;
+    border-left: 3px solid #4caf50;
+}
+
+/* ===== Error ===== */
+.error {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    margin: 0 40px 25px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    border-left: 5px solid #d32f2f;
+    color: #c62828;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #888;
+    background: #f7f9fc;
+    border-top: 1px solid #e0e6f0;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-section, .result, .error {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .header h1 {
+        font-size: 24px;
+    }
+}
